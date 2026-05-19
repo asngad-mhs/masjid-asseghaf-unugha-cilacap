@@ -5,8 +5,10 @@ import News from '../components/home/News';
 import Donation from '../components/home/Donation';
 import { motion } from 'motion/react';
 import { MapPin, Phone, Mail, Globe, Star, Quote, User } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function HomePage() {
+  const { t } = useLanguage();
   return (
     <div className="overflow-x-hidden">
       <Hero />
@@ -101,7 +103,7 @@ export default function HomePage() {
       <section id="contact" className="py-24 bg-white dark:bg-slate-950 px-4">
          <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
             <div>
-               <h2 className="text-3xl md:text-5xl font-display font-bold mb-8 tracking-tight">Lokasi & Kontak</h2>
+               <h2 className="text-3xl md:text-5xl font-display font-bold mb-8 tracking-tight">{t('contact.title')}</h2>
                <div className="space-y-8 mb-12">
                   <div className="flex items-start space-x-4">
                      <div className="p-3 bg-blue-50 dark:bg-blue-900/20 text-brand-primary rounded-xl">

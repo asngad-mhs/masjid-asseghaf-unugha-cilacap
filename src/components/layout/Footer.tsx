@@ -59,7 +59,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6 uppercase tracking-widest text-xs">Informasi Kontak</h4>
+            <h4 className="text-white font-bold mb-6 uppercase tracking-widest text-xs">{t('contact.title')}</h4>
             <ul className="space-y-4 text-sm">
               <li className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-brand-accent flex-shrink-0" />

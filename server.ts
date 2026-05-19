@@ -6,14 +6,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const ai = new GoogleGenAI({
-  apiKey: process.env.GEMINI_API_KEY || "",
-  httpOptions: {
-    headers: {
-      'User-Agent': 'aistudio-build',
-    }
-  }
-});
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
 
 async function startServer() {
   const app = express();
@@ -45,7 +38,7 @@ async function startServer() {
   app.post("/api/chat", async (req, res) => {
     try {
       const { message, history } = req.body;
-      const model = ai.getGenerativeModel({ 
+      const model = (ai as any).getGenerativeModel({ 
         model: "gemini-1.5-flash",
         systemInstruction: "You are the AI assistant for Masjid Asseghaf UNUGHA Cilacap. Answer questions about the mosque, its services, donation process, events, and Islamic topics politely. If you don't know something specific about the mosque, suggest contacting the staff via the contact form.",
       });
