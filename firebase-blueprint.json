@@ -1,0 +1,126 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile information and roles.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "displayName": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["admin", "staff", "user"] },
+        "photoURL": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "role"]
+    },
+    "Event": {
+      "title": "Event",
+      "description": "Mosque events and activities.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "date": { "type": "string", "format": "date-time" },
+        "location": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "category": { "type": "string" },
+        "createdBy": { "type": "string" }
+      },
+      "required": ["title", "date"]
+    },
+    "News": {
+      "title": "News",
+      "description": "Latest news and articles.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "date": { "type": "string", "format": "date-time" },
+        "imageUrl": { "type": "string" },
+        "author": { "type": "string" }
+      },
+      "required": ["title", "content", "date"]
+    },
+    "GalleryItem": {
+      "title": "Gallery Item",
+      "description": "Photos from mosque activities.",
+      "type": "object",
+      "properties": {
+        "imageUrl": { "type": "string" },
+        "caption": { "type": "string" },
+        "date": { "type": "string", "format": "date-time" },
+        "category": { "type": "string" }
+      },
+      "required": ["imageUrl"]
+    },
+    "Staff": {
+      "title": "Staff",
+      "description": "Mosque management and staff details.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "role": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "bio": { "type": "string" },
+        "order": { "type": "number" }
+      },
+      "required": ["name", "role"]
+    },
+    "Testimonial": {
+      "title": "Testimonial",
+      "description": "Feedback from the community.",
+      "type": "object",
+      "properties": {
+        "userName": { "type": "string" },
+        "text": { "type": "string" },
+        "rating": { "type": "number" },
+        "date": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userName", "text"]
+    },
+    "Donation": {
+      "title": "Donation",
+      "description": "Records of online donations (private).",
+      "type": "object",
+      "properties": {
+        "amount": { "type": "number" },
+        "donorName": { "type": "string" },
+        "date": { "type": "string", "format": "date-time" },
+        "message": { "type": "string" },
+        "isAnonymous": { "type": "boolean" }
+      },
+      "required": ["amount", "date"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profiles."
+    },
+    "/events/{eventId}": {
+      "schema": "Event",
+      "description": "Mosque events."
+    },
+    "/news/{newsId}": {
+      "schema": "News",
+      "description": "Latest news."
+    },
+    "/gallery/{itemId}": {
+      "schema": "GalleryItem",
+      "description": "Photo gallery."
+    },
+    "/staff/{staffId}": {
+      "schema": "Staff",
+      "description": "Management list."
+    },
+    "/testimonials/{testimonialId}": {
+      "schema": "Testimonial",
+      "description": "Community feedback."
+    },
+    "/donations/{donationId}": {
+      "schema": "Donation",
+      "description": "Donation records."
+    }
+  }
+}

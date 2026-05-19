@@ -1,0 +1,6 @@
+{
+  "name": "Masjid Asseghaf UNUGHA Cilacap",
+  "description": "Website resmi Masjid Asseghaf UNUGHA Cilacap dengan fitur jadwal sholat, galeri, berita, dan donasi.",
+  "requestFramePermissions": ["geolocation", "notifications"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
