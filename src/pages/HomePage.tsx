@@ -129,7 +129,7 @@ export default function HomePage() {
                      </div>
                      <div>
                         <h4 className="font-bold">Email</h4>
-                        <p className="text-gray-500 text-sm">info@asseghaf.unugha.ac.id</p>
+                        <p className="text-gray-500 text-sm">masjidasseghaf.unugha.ac.id</p>
                      </div>
                   </div>
                </div>

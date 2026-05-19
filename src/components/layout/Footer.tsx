@@ -71,7 +71,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-brand-accent" />
-                <span>info@asseghaf.unugha.ac.id</span>
+                <span>masjidasseghaf.unugha.ac.id</span>
               </li>
             </ul>
           </div>
