@@ -63,15 +63,15 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-brand-accent flex-shrink-0" />
-                <span>Jl. Kemerdekaan No.1, Cilacap, Jawa Tengah 53232</span>
+                <span>Jl. Kemerdekaan Barat No.12, Kesugihan, Cilacap, Jawa Tengah 53274</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-brand-accent" />
-                <span>(0282) 534xxx</span>
+                <span>089670924182</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-brand-accent" />
-                <span>info@asseghaf-unugha.ac.id</span>
+                <span>info@asseghaf.unugha.ac.id</span>
               </li>
             </ul>
           </div>

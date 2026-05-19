@@ -109,7 +109,7 @@ export default function HomePage() {
                      </div>
                      <div>
                         <h4 className="font-bold">Alamat</h4>
-                        <p className="text-gray-500 text-sm">Jl. Kemerdekaan No.1, Kesugihan, Cilacap, Jawa Tengah</p>
+                        <p className="text-gray-500 text-sm">Jl. Kemerdekaan Barat No.12, Kesugihan, Cilacap, Jawa Tengah 53274</p>
                      </div>
                   </div>
                   <div className="flex items-start space-x-4">
@@ -118,7 +118,7 @@ export default function HomePage() {
                      </div>
                      <div>
                         <h4 className="font-bold">Telepon</h4>
-                        <p className="text-gray-500 text-sm">(0282) 534xxx / 0812-xxxx-xxxx</p>
+                        <p className="text-gray-500 text-sm">089670924182</p>
                      </div>
                   </div>
                   <div className="flex items-start space-x-4">
@@ -127,7 +127,7 @@ export default function HomePage() {
                      </div>
                      <div>
                         <h4 className="font-bold">Email</h4>
-                        <p className="text-gray-500 text-sm">info@asseghaf-unugha.ac.id</p>
+                        <p className="text-gray-500 text-sm">info@asseghaf.unugha.ac.id</p>
                      </div>
                   </div>
                </div>
