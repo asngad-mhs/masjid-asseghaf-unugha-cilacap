@@ -45,16 +45,15 @@ async function startServer() {
   app.post("/api/chat", async (req, res) => {
     try {
       const { message, history } = req.body;
-      const chat = ai.chats.create({
-        model: "gemini-3-flash-preview",
-        config: {
-          systemInstruction: "You are the AI assistant for Masjid Asseghaf UNUGHA Cilacap. Answer questions about the mosque, its services, donation process, events, and Islamic topics politely. If you don't know something specific about the mosque, suggest contacting the staff via the contact form.",
-        },
+      const model = ai.getGenerativeModel({ 
+        model: "gemini-1.5-flash",
+        systemInstruction: "You are the AI assistant for Masjid Asseghaf UNUGHA Cilacap. Answer questions about the mosque, its services, donation process, events, and Islamic topics politely. If you don't know something specific about the mosque, suggest contacting the staff via the contact form.",
       });
+      const chat = model.startChat();
 
-      // Simple implementation: send context then message
-      const response = await chat.sendMessage({ message });
-      res.json({ text: response.text });
+      const result = await chat.sendMessage(message);
+      const response = await result.response;
+      res.json({ text: response.text() });
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: "Chat support failed" });

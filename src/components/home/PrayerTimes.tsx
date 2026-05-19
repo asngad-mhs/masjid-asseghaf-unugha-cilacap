@@ -36,8 +36,11 @@ export default function PrayerTimes() {
       if (!location) return;
       try {
         const res = await fetch(`/api/prayer-times?lat=${location.lat}&lng=${location.lng}`);
+        if (!res.ok) throw new Error('Failed to fetch');
         const result = await res.json();
-        setTimes(result.data.timings);
+        if (result && result.data && result.data.timings) {
+          setTimes(result.data.timings);
+        }
       } catch (e) {
         console.error(e);
       } finally {

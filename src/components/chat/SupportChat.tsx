@@ -38,8 +38,9 @@ export default function SupportChat() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: userMsg }),
       });
+      if (!res.ok) throw new Error('API Error');
       const data = await res.json();
-      setMessages(prev => [...prev, { role: 'assistant', content: data.text }]);
+      setMessages(prev => [...prev, { role: 'assistant', content: data.text || 'Maaf, saya tidak dapat menjawab saat ini.' }]);
     } catch (error) {
       setMessages(prev => [...prev, { role: 'assistant', content: 'Maaf, terjadi kesalahan. Silakan coba lagi nanti.' }]);
     } finally {
